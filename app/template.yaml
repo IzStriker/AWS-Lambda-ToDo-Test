@@ -39,6 +39,19 @@ Resources:
             Path: /todo
             Method: get
 
+  GetCompleteToDoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: todo/
+      Handler: getComplete.lambdaHandler
+      Runtime: nodejs16.x
+      Events:
+        Get:
+          Type: Api
+          Properties:
+            Path: /todo/complete
+            Method: Get
+
   GetSpecificToDoFunction:
     Type: AWS::Serverless::Function
     Properties:
