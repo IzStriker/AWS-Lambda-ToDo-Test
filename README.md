@@ -15,3 +15,9 @@ Start Api
 ```bash
 sam local start-api --docker-network todo-api
 ```
+
+Start DynamoDB Gui
+
+```bash
+dynamodb-admin
+```
