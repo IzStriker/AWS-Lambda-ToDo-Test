@@ -20,7 +20,7 @@ exports.lambdaHandler = async (event, context) => {
     TableName: "ToDo",
     Item: {
       id: uuid.v4(),
-      task: event.body.task,
+      task: body.task,
       completed: false,
     },
   };
