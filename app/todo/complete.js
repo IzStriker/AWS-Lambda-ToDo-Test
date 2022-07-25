@@ -5,7 +5,7 @@ const docClient = new AWS.DynamoDB.DocumentClient({
 });
 
 exports.lambdaHandler = async (event, context) => {
-  let item = await docClient
+  await docClient
     .update({
       TableName: "ToDo",
       Key: {
