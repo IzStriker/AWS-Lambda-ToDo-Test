@@ -50,7 +50,20 @@ Resources:
           Type: Api
           Properties:
             Path: /todo/complete
-            Method: Get
+            Method: get
+
+  GetUnCompleteTodoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: todo/
+      Handler: getUnComplete.lambdaHandler
+      Runtime: nodejs16.x
+      Events:
+        Get:
+          Type: Api
+          Properties:
+            Path: /todo/uncomplete
+            Method: get
 
   GetSpecificToDoFunction:
     Type: AWS::Serverless::Function
