@@ -52,6 +52,19 @@ Resources:
             Path: /todo/{id}
             Method: get
 
+  CompleteToDoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: todo/
+      Handler: complete.lambdaHandler
+      Runtime: nodejs16.x
+      Events:
+        Update:
+          Type: Api
+          Properties:
+            Path: /todo/{id}/complete
+            Method: patch
+
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
