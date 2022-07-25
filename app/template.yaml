@@ -39,6 +39,19 @@ Resources:
             Path: /todo
             Method: get
 
+  GetSpecificToDoFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: todo/
+      Handler: getSpecific.lambdaHandler
+      Runtime: nodejs16.x
+      Events:
+        Get:
+          Type: Api
+          Properties:
+            Path: /todo/{id}
+            Method: get
+
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
